@@ -1,0 +1,28 @@
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let total = 0;
+
+function addToCart(id) {
+    const product = { id, name: `Shoe ${id}`, price: id === 1 ? 50 : 40 };
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
+}
+
+function updateCart() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    total = 0;
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price}`;
+        cartItems.appendChild(li);
+        total += item.price;
+    });
+    document.getElementById('total').textContent = total;
+}
+
+function checkout() {
+    alert(`Total: $${total}. Proceed to payment!`);
+}
+
+updateCart();
