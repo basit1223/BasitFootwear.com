@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basit Online Shoes Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Basit Online Shoes Store</h1>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart</a>
+        </nav>
+    </header>
+    
+    <section id="products">
+        <h2>Our Shoes</h2>
+        <div class="product-list">
+            <div class="product" data-id="1">
+                <img src="shoe1.jpg" alt="Running Shoe">
+                <h3>Running Shoe</h3>
+                <p>$50</p>
+                <button onclick="addToCart(1)">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2">
+                <img src="shoe2.jpg" alt="Casual Sneaker">
+                <h3>Casual Sneaker</h3>
+                <p>$40</p>
+                <button onclick="addToCart(2)">Add to Cart</button>
+            </div>
+            <!-- Add more products here -->
+        </div>
+    </section>
+    
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
